@@ -1,5 +1,4 @@
 @use "../../styles/variables.scss" as *;
-
 ul.section-ul {
   list-style: none;
   margin-top: 2em;
@@ -10,31 +9,39 @@ li.section-li {
   margin-bottom: 1em;
 
   & > .section {
-    display: grid;
-    grid-template-columns: fit-content(8em) 3fr 1fr;
+    display: flex;
+    align-items: center;
+    gap: 1em;
 
     @media all and ($mobile) {
-      & > .tags {
+      & > .desc .tags {
         display: none;
       }
     }
 
-    & > .desc > h3 > a {
+    & > .desc > .title-with-tags > h3 > a {
       background-color: transparent;
     }
 
     & .meta {
-      margin: 0 1em 0 0;
+      margin: 0;
       opacity: 0.6;
+      white-space: nowrap;
+    }
+
+    & .desc {
+      flex: 1;
     }
   }
 }
 
 // modifications in popover context
 .popover .section {
-  grid-template-columns: fit-content(8em) 1fr !important;
+  display: flex !important;
+  align-items: center;
+  gap: 1em;
 
-  & > .tags {
+  & > .desc .tags {
     display: none;
   }
 }

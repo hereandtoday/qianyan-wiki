@@ -77,24 +77,28 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
                 {page.dates && <Date date={getDate(cfg, page)!} locale={cfg.locale} />}
               </p>
               <div class="desc">
-                <h3>
-                  <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
-                    {title}
-                  </a>
-                </h3>
-              </div>
-              <ul class="tags">
-                {tags.map((tag) => (
-                  <li>
-                    <a
-                      class="internal tag-link"
-                      href={resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)}
-                    >
-                      {tag}
+                <div class="title-with-tags">
+                  <h3>
+                    <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
+                      {title}
                     </a>
-                  </li>
-                ))}
-              </ul>
+                  </h3>
+                  {tags.length > 0 && (
+                    <ul class="tags">
+                      {tags.map((tag) => (
+                        <li>
+                          <a
+                            class="internal tag-link"
+                            href={resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)}
+                          >
+                            {tag}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </div>
             </div>
           </li>
         )
@@ -110,5 +114,46 @@ PageList.css = `
 
 .section > .tags {
   margin: 0;
+}
+
+.title-with-tags {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.title-with-tags h3 {
+  flex: 1;
+  margin: 0;
+}
+
+.title-with-tags .tags {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.title-with-tags .tags li {
+  margin: 0;
+}
+
+.title-with-tags .tags li a {
+  font-size: 0.85rem;
+  color: #333333;
+  background-color: #f0f0f0;
+  padding: 2px 8px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.title-with-tags .tags li a:hover {
+  background-color: #e0e0e0;
+  color: #222222;
 }
 `

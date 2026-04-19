@@ -289,3 +289,161 @@ pre {
     }
   }
 }
+
+// ============================================
+// 左侧导航栏样式 - 深蓝主题 (参考 learnbuffett.com)
+// ============================================
+
+// 左侧边栏整体样式
+.sidebar {
+  background: #1a365d !important;  // 深海军蓝
+  border-radius: 16px;
+  margin: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+// Explorer 组件容器
+.sidebar .explorer {
+  padding: 16px 12px;
+}
+
+// Explorer 标题
+.sidebar .explorer > .title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 8px 12px;
+  margin-bottom: 8px;
+}
+
+// 导航项（文件夹和文件）
+.sidebar .explorer li {
+  margin: 6px 0;
+}
+
+// 导航链接
+.sidebar .explorer li a,
+.sidebar .explorer .folder > .title,
+.sidebar .explorer .entry {
+  color: rgba(255, 255, 255, 0.85) !important;
+  padding: 10px 14px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: block;
+  margin: 4px 0;
+}
+
+// 导航项悬停效果
+.sidebar .explorer li a:hover,
+.sidebar .explorer .folder > .title:hover,
+.sidebar .explorer .entry:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  transform: translateX(4px);
+}
+
+// 当前激活的导航项
+.sidebar .explorer li a.active {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  font-weight: 500;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+// 文件夹容器
+.sidebar .explorer .folder {
+  margin: 8px 0;
+}
+
+// 文件夹标题（展开/收起）
+.sidebar .explorer .folder > .title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+// 文件夹展开指示器
+.sidebar .explorer .folder > .title::before {
+  content: "▶";
+  font-size: 0.65rem;
+  transition: transform 0.2s ease;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.sidebar .explorer .folder.open > .title::before {
+  transform: rotate(90deg);
+}
+
+// 文件夹子项缩进
+.sidebar .explorer .folder ul {
+  padding-left: 20px;
+  margin: 4px 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  margin-left: 26px;
+}
+
+// 搜索框在深蓝背景上的样式
+.sidebar input[type="text"],
+.sidebar input[type="search"] {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: #ffffff;
+  padding: 10px 14px;
+  width: calc(100% - 28px);
+  margin: 8px;
+  font-size: 0.9rem;
+  
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
+
+// 深色模式切换按钮
+.sidebar button[aria-label="Toggle theme"],
+.sidebar .darkmode {
+  color: rgba(255, 255, 255, 0.8) !important;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+  }
+}
+
+// 页面标题在左侧导航中
+.sidebar .page-title {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 12px;
+}
+
+// 移动端适配 - 保持左侧导航可读性
+@media (max-width: 768px) {
+  .sidebar {
+    border-radius: 12px;
+    margin: 4px;
+  }
+  
+  .sidebar .explorer li a,
+  .sidebar .explorer .folder > .title {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+}

@@ -132,34 +132,54 @@ updated: 2026-04-19
 ## 👤 关键投资人
 
 <div class="person-grid">
-  <div class="person-card">
-    <h3>巴菲特</h3>
-    <p>被引用 94 次</p>
-  </div>
-  <div class="person-card">
-    <h3>芒格</h3>
-    <p>被引用 80 次</p>
-  </div>
-  <div class="person-card">
-    <h3>霍华德·马克斯</h3>
-    <p>被引用 61 次</p>
-  </div>
-  <div class="person-card">
-    <h3>段永平</h3>
-    <p>被引用 49 次</p>
-  </div>
-  <div class="person-card">
-    <h3>格雷厄姆</h3>
-    <p>被引用 47 次</p>
-  </div>
-  <div class="person-card">
-    <h3>塔勒布</h3>
-    <p>被引用 46 次</p>
-  </div>
-  <div class="person-card">
-    <h3>李录</h3>
-    <p>被引用 43 次</p>
-  </div>
+  <a href="/知名投资人/巴菲特" class="person-card-link">
+    <div class="person-card">
+      <h3>巴菲特</h3>
+      <p>被引用 94 次</p>
+    </div>
+  </a>
+  <a href="/知名投资人/芒格" class="person-card-link">
+    <div class="person-card">
+      <h3>芒格</h3>
+      <p>被引用 80 次</p>
+    </div>
+  </a>
+  <a href="/知名投资人/霍华德·马克斯" class="person-card-link">
+    <div class="person-card">
+      <h3>霍华德·马克斯</h3>
+      <p>被引用 61 次</p>
+    </div>
+  </a>
+  <a href="/知名投资人/段永平" class="person-card-link">
+    <div class="person-card">
+      <h3>段永平</h3>
+      <p>被引用 49 次</p>
+    </div>
+  </a>
+  <a href="/知名投资人/格雷厄姆" class="person-card-link">
+    <div class="person-card">
+      <h3>格雷厄姆</h3>
+      <p>被引用 47 次</p>
+    </div>
+  </a>
+  <a href="/知名投资人/塔勒布" class="person-card-link">
+    <div class="person-card">
+      <h3>塔勒布</h3>
+      <p>被引用 46 次</p>
+    </div>
+  </a>
+  <a href="/知名投资人/李录" class="person-card-link">
+    <div class="person-card">
+      <h3>李录</h3>
+      <p>被引用 43 次</p>
+    </div>
+  </a>
+  <a href="/知名投资人/帕伯莱" class="person-card-link">
+    <div class="person-card">
+      <h3>帕伯莱</h3>
+      <p>价值投资大师</p>
+    </div>
+  </a>
 </div>
 
 ---
@@ -294,5 +314,15 @@ updated: 2026-04-19
   color: #8b7355;
   font-size: 14px;
   margin: 0;
+}
+
+.person-card-link {
+  text-decoration: none;
+  display: block;
+}
+
+.person-card-link:hover .person-card {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 </style>

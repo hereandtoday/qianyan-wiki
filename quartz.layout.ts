@@ -21,7 +21,14 @@ export const defaultContentPageLayout: PageLayout = {
       component: Component.Breadcrumbs(),
       condition: (page) => page.fileData.slug !== "index",
     }),
-    Component.ArticleTitle(),
+    Component.ConditionalRender({
+      component: Component.ArticleTitle(),
+      condition: (page) => {
+        // 隐藏概念页的标题
+        const slug = page.fileData.slug || ""
+        return !slug.includes("投资概念/") && !slug.includes("商业概念/") && !slug.includes("财务概念/") && !slug.includes("投资者概念/") && !slug.includes("知名投资人/")
+      },
+    }),
     Component.ContentMeta(),
   ],
   left: [

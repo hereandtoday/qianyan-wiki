@@ -6,11 +6,11 @@ created: 2026-04-14
 updated: 2026-04-19
 ---
 
-![logo](https://qianyan-wiki.pages.dev/quartz/assets/kb-logo.svg)
+![千研投资知识库 Logo](/logo.png)
 
 # 千研投资知识库
 
-> 价值投资 · 商业智慧 · 认知升级
+> 一图千研，茁速灵动
 
 ---
 

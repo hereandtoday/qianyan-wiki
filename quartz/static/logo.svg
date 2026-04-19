@@ -7,6 +7,9 @@
     </linearGradient>
   </defs>
 
+  <!-- 背景矩形 -->
+  <rect x="0" y="0" width="280" height="60" fill="#FAF8F5"/>
+
   <!-- 图标部分：抽象的"研"字变形 + 放大镜元素 -->
   <g transform="translate(5, 8)">
     <!-- 背景圆形 -->

@@ -6,7 +6,9 @@ created: 2026-04-14
 updated: 2026-04-19
 ---
 
-![千研投资知识库 Logo](/static/logo.svg)
+<div class="header-logo">
+  <img src="/static/logo.svg" alt="千研投资知识库" class="header-logo-image" />
+</div>
 
 ---
 
@@ -47,7 +49,7 @@ updated: 2026-04-19
 
 ---
 
-## 🔥 核心投资概念 TOP 15
+## 🔥 核心投资概念 TOP 10
 
 <div class="top-list">
   <div class="top-item">
@@ -100,86 +102,6 @@ updated: 2026-04-19
     <span class="concept">商业模式</span>
     <span class="count">52</span>
   </div>
-  <div class="top-item">
-    <span class="rank">11</span>
-    <span class="concept">定价权</span>
-    <span class="count">51</span>
-  </div>
-  <div class="top-item">
-    <span class="rank">12</span>
-    <span class="concept">回购</span>
-    <span class="count">50</span>
-  </div>
-  <div class="top-item">
-    <span class="rank">13</span>
-    <span class="concept">管理层</span>
-    <span class="count">50</span>
-  </div>
-  <div class="top-item">
-    <span class="rank">14</span>
-    <span class="concept">分散投资</span>
-    <span class="count">48</span>
-  </div>
-  <div class="top-item">
-    <span class="rank">15</span>
-    <span class="concept">逆向投资</span>
-    <span class="count">47</span>
-  </div>
-</div>
-
----
-
-## 👤 关键投资人
-
-<div class="person-grid">
-  <a href="/知名投资人/巴菲特" class="person-card-link">
-    <div class="person-card">
-      <h3>巴菲特</h3>
-      <p>被引用 94 次</p>
-    </div>
-  </a>
-  <a href="/知名投资人/芒格" class="person-card-link">
-    <div class="person-card">
-      <h3>芒格</h3>
-      <p>被引用 80 次</p>
-    </div>
-  </a>
-  <a href="/知名投资人/霍华德·马克斯" class="person-card-link">
-    <div class="person-card">
-      <h3>霍华德·马克斯</h3>
-      <p>被引用 61 次</p>
-    </div>
-  </a>
-  <a href="/知名投资人/段永平" class="person-card-link">
-    <div class="person-card">
-      <h3>段永平</h3>
-      <p>被引用 49 次</p>
-    </div>
-  </a>
-  <a href="/知名投资人/格雷厄姆" class="person-card-link">
-    <div class="person-card">
-      <h3>格雷厄姆</h3>
-      <p>被引用 47 次</p>
-    </div>
-  </a>
-  <a href="/知名投资人/塔勒布" class="person-card-link">
-    <div class="person-card">
-      <h3>塔勒布</h3>
-      <p>被引用 46 次</p>
-    </div>
-  </a>
-  <a href="/知名投资人/李录" class="person-card-link">
-    <div class="person-card">
-      <h3>李录</h3>
-      <p>被引用 43 次</p>
-    </div>
-  </a>
-  <a href="/知名投资人/帕伯莱" class="person-card-link">
-    <div class="person-card">
-      <h3>帕伯莱</h3>
-      <p>价值投资大师</p>
-    </div>
-  </a>
 </div>
 
 ---
@@ -301,28 +223,25 @@ updated: 2026-04-19
   transition: transform 0.3s ease;
 }
 
-.person-card:hover {
-  transform: translateY(-3px);
-}
-
-.person-card h3 {
-  color: #2b2b2b;
-  margin-bottom: 8px;
-}
-
 .person-card p {
   color: #8b7355;
   font-size: 14px;
   margin: 0;
 }
 
-.person-card-link {
+.person-link {
   text-decoration: none;
   display: block;
+  width: 100%;
+  height: 100%;
 }
 
-.person-card-link:hover .person-card {
+.person-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.person-link:hover h3 {
+  color: #8b7355;
 }
 </style>

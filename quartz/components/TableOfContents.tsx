@@ -31,6 +31,14 @@ export default ((opts?: Partial<Options>) => {
     }
 
     const id = `toc-${numTocs++}`
+
+    // 过滤出只有一级标题的 TOC
+    const firstLevelToc = fileData.toc.filter((tocEntry) => tocEntry.depth === 1)
+
+    if (firstLevelToc.length === 0) {
+      return null
+    }
+
     return (
       <div class={classNames(displayClass, "toc")}>
         <button
@@ -59,7 +67,7 @@ export default ((opts?: Partial<Options>) => {
           id={id}
           class={fileData.collapseToc ? "collapsed toc-content" : "toc-content"}
         >
-          {fileData.toc.map((tocEntry) => (
+          {firstLevelToc.map((tocEntry) => (
             <li key={tocEntry.slug} class={`depth-${tocEntry.depth}`}>
               <a href={`#${tocEntry.slug}`} data-for={tocEntry.slug}>
                 {tocEntry.text}
@@ -78,13 +86,21 @@ export default ((opts?: Partial<Options>) => {
     if (!fileData.toc) {
       return null
     }
+
+    // 过滤出只有一级标题的 TOC
+    const firstLevelToc = fileData.toc.filter((tocEntry) => tocEntry.depth === 1)
+
+    if (firstLevelToc.length === 0) {
+      return null
+    }
+
     return (
       <details class="toc" open={!fileData.collapseToc}>
         <summary>
           <h3>{i18n(cfg.locale).components.tableOfContents.title}</h3>
         </summary>
         <ul>
-          {fileData.toc.map((tocEntry) => (
+          {firstLevelToc.map((tocEntry) => (
             <li key={tocEntry.slug} class={`depth-${tocEntry.depth}`}>
               <a href={`#${tocEntry.slug}`} data-for={tocEntry.slug}>
                 {tocEntry.text}

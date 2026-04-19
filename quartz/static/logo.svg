@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" width="280" height="60">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c9a961"/>
+      <stop offset="50%" style="stop-color:#e8d5a3"/>
+      <stop offset="100%" style="stop-color:#c9a961"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 图标部分：抽象的"研"字变形 + 放大镜元素 -->
+  <g transform="translate(5, 8)">
+    <!-- 背景圆形 -->
+    <circle cx="22" cy="22" r="20" fill="#2b2b2b" opacity="0.08"/>
+    <circle cx="22" cy="22" r="18" fill="none" stroke="#2b2b2b" stroke-width="1.5" opacity="0.2"/>
+
+    <!-- 放大镜把手 -->
+    <line x1="34" y1="34" x2="42" y2="42" stroke="#c9a961" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- 放大镜镜框 -->
+    <circle cx="24" cy="24" r="12" fill="none" stroke="#2b2b2b" stroke-width="2.5"/>
+
+    <!-- 放大镜镜片反光 -->
+    <path d="M 18 18 Q 22 14, 28 16" fill="none" stroke="#c9a961" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+
+    <!-- 中间的"千"字抽象线条 -->
+    <line x1="18" y1="24" x2="30" y2="24" stroke="#2b2b2b" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- 文字部分 -->
+  <text x="62" y="28" font-family="'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', sans-serif" font-size="22" font-weight="600" fill="#2b2b2b">千研投资</text>
+
+  <!-- 副标题：深度研究 -->
+  <text x="62" y="44" font-family="'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', sans-serif" font-size="11" fill="#8b7355" letter-spacing="2">DEPTH RESEARCH</text>
+</svg>

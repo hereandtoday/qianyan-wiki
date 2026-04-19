@@ -264,12 +264,12 @@ pre {
 }
 
 // ============================================
-// 左侧导航栏样式 - 深蓝黑主题 (v4)
+// 左侧导航栏样式 - 深蓝黑主题
 // ============================================
 
 // 左侧边栏容器
-.sidebar {
-  background: #1A2332 !important;  // 深蓝黑背景
+.sidebar.left {
+  background: #1A2332 !important;
   width: 280px !important;
   min-width: 280px !important;
   border-radius: 0;
@@ -278,35 +278,24 @@ pre {
   position: fixed;
   left: 0;
   top: 0;
-  overflow-y: auto;
+  overflow-y: visible !important;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
   
-  // 滚动条样式
   &::-webkit-scrollbar {
-    width: 6px;
+    display: none;
   }
   
-  &::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
-  }
-  
-  &::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 3px;
-    
-    &:hover {
-      background: rgba(255, 255, 255, 0.3);
-    }
-  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 // Explorer 组件容器
-.sidebar .explorer {
+.sidebar.left .explorer {
   padding: 20px 16px;
 }
 
 // Explorer 标题
-.sidebar .explorer > .title {
+.sidebar.left .explorer > .title {
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -317,14 +306,14 @@ pre {
 }
 
 // 导航项（文件夹和文件）
-.sidebar .explorer li {
+.sidebar.left .explorer li {
   margin: 4px 0;
 }
 
 // 导航链接 - 白色文字
-.sidebar .explorer li a,
-.sidebar .explorer .folder > .title,
-.sidebar .explorer .entry {
+.sidebar.left .explorer li a,
+.sidebar.left .explorer .folder > .title,
+.sidebar.left .explorer .entry {
   color: #ffffff !important;
   padding: 12px 16px;
   border-radius: 8px;
@@ -337,27 +326,27 @@ pre {
 }
 
 // 导航项悬停效果
-.sidebar .explorer li a:hover,
-.sidebar .explorer .folder > .title:hover,
-.sidebar .explorer .entry:hover {
+.sidebar.left .explorer li a:hover,
+.sidebar.left .explorer .folder > .title:hover,
+.sidebar.left .explorer .entry:hover {
   background: rgba(255, 255, 255, 0.1) !important;
   color: #ffffff !important;
 }
 
 // 当前激活的导航项
-.sidebar .explorer li a.active {
+.sidebar.left .explorer li a.active {
   background: rgba(255, 255, 255, 0.15) !important;
   color: #ffffff !important;
   font-weight: 500;
 }
 
 // 文件夹容器
-.sidebar .explorer .folder {
+.sidebar.left .explorer .folder {
   margin: 6px 0;
 }
 
 // 文件夹标题（展开/收起）
-.sidebar .explorer .folder > .title {
+.sidebar.left .explorer .folder > .title {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -368,19 +357,19 @@ pre {
 }
 
 // 文件夹展开指示器
-.sidebar .explorer .folder > .title::before {
+.sidebar.left .explorer .folder > .title::before {
   content: "▶";
   font-size: 0.6rem;
   transition: transform 0.2s ease;
   color: rgba(255, 255, 255, 0.6);
 }
 
-.sidebar .explorer .folder.open > .title::before {
+.sidebar.left .explorer .folder.open > .title::before {
   transform: rotate(90deg);
 }
 
 // 文件夹子项缩进
-.sidebar .explorer .folder ul {
+.sidebar.left .explorer .folder ul {
   padding-left: 20px;
   margin: 4px 0;
   border-left: 1px solid rgba(255, 255, 255, 0.15);
@@ -388,8 +377,8 @@ pre {
 }
 
 // 搜索框样式
-.sidebar input[type="text"],
-.sidebar input[type="search"] {
+.sidebar.left input[type="text"],
+.sidebar.left input[type="search"] {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 8px;
@@ -411,8 +400,8 @@ pre {
 }
 
 // 深色模式切换按钮
-.sidebar button[aria-label="Toggle theme"],
-.sidebar .darkmode {
+.sidebar.left button[aria-label="Toggle theme"],
+.sidebar.left .darkmode {
   color: rgba(255, 255, 255, 0.8) !important;
   
   &:hover {
@@ -422,7 +411,7 @@ pre {
 }
 
 // 页面标题样式
-.sidebar .page-title {
+.sidebar.left .page-title {
   color: #ffffff;
   font-size: 1rem;
   font-weight: 600;
@@ -435,25 +424,102 @@ pre {
   }
 }
 
+// h2 标题白色文字
+.sidebar.left h2 {
+  color: #ffffff !important;
+}
+
 // ============================================
-// 右侧关系图谱区域 - 恢复浅色背景
+// 右侧导航栏样式 - 浅色主题，与左侧区分
 // ============================================
 
-.right-sidebar {
-  background: var(--light) !important;  // 浅色/白色背景
-  padding: 16px;
+// 右侧边栏容器
+.sidebar.right {
+  background: #f8f6f2 !important;
+  width: 260px !important;
+  min-width: 260px !important;
+  border-radius: 0;
+  margin: 0;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  overflow-y: visible !important;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
   
-  // 关系图谱样式
-  .graph {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 16px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+// 右侧 TOC 样式 - 与左侧保持一致间距
+.sidebar.right .toc {
+  padding: 20px 16px;
+
+  & button.toc-header {
+    color: #2b2b2b;
+    padding: 12px 16px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+
+    & h3 {
+      color: #2b2b2b;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 0;
+    }
+
+    & .fold {
+      opacity: 0.4;
+    }
+  }
+
+  & ul.toc-content {
+    margin: 8px 0;
+    padding: 0;
+    list-style: none;
+
+    & > li > a {
+      color: #8b7355 !important;
+      opacity: 0.6;
+      font-size: 0.9rem;
+      padding: 12px 16px;
+      transition: all 0.2s ease;
+      display: block;
+      border-radius: 8px;
+      margin: 2px 0;
+      text-decoration: none;
+
+      &:hover {
+        color: #c9a961 !important;
+        opacity: 1;
+        background: rgba(139, 115, 85, 0.08);
+      }
+
+      &.in-view {
+        color: #c9a961 !important;
+        opacity: 1;
+      }
+    }
+
+    // 隐藏二级标题
+    & .depth-2,
+    & .depth-3,
+    & .depth-4,
+    & .depth-5,
+    & .depth-6 {
+      display: none;
+    }
   }
 }
 
 // ============================================
-// 正文区域 - 增大宽度
+// 正文区域
 // ============================================
 
 article, .content {
@@ -490,7 +556,7 @@ article, .content {
   }
   
   // 移动端左侧导航
-  .sidebar {
+  .sidebar.left {
     width: 100% !important;
     min-width: 100% !important;
     height: auto;

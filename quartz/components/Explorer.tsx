@@ -30,20 +30,46 @@ const defaultOptions: Options = {
     return node
   },
   sortFn: (a, b) => {
-    // Sort order: folders first, then files. Sort folders and files alphabeticall
-    if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
-      // numeric: true: Whether numeric collation should be used, such that "1" < "2" < "10"
-      // sensitivity: "base": Only strings that differ in base letters compare as unequal. Examples: a ≠ b, a = á, a = A
+    // 自定义排序顺序：投资概念，商业概念，财务概念，投资者概念，其他概念，知名投资人，公司名录
+    const customOrder = [
+      '投资概念',
+      '商业概念', 
+      '财务概念',
+      '投资者概念',
+      '其他概念',
+      '知名投资人',
+      '公司名录'
+    ]
+    
+    if (a.isFolder && b.isFolder) {
+      // 两个都是文件夹，按照自定义顺序排序
+      const aIndex = customOrder.indexOf(a.displayName)
+      const bIndex = customOrder.indexOf(b.displayName)
+      
+      if (aIndex !== -1 && bIndex !== -1) {
+        return aIndex - bIndex
+      } else if (aIndex !== -1) {
+        return -1
+      } else if (bIndex !== -1) {
+        return 1
+      } else {
+        // 都不在自定义列表中，按字母排序
+        return a.displayName.localeCompare(b.displayName, undefined, {
+          numeric: true,
+          sensitivity: "base",
+        })
+      }
+    } else if (!a.isFolder && !b.isFolder) {
+      // 两个都是文件，按字母排序
       return a.displayName.localeCompare(b.displayName, undefined, {
         numeric: true,
         sensitivity: "base",
       })
-    }
-
-    if (!a.isFolder && b.isFolder) {
-      return 1
-    } else {
+    } else if (a.isFolder) {
+      // 文件夹优先于文件
       return -1
+    } else {
+      return 1
     }
   },
   filterFn: (node) => node.slugSegment !== "tags",
